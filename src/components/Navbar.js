@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
+import styled from 'styled-components'
 
 export default class Navbar extends Component {
   render() {
@@ -11,7 +12,7 @@ export default class Navbar extends Component {
           https://www.iconfinder.com/Makoto_msk 
         */}
         <Link to='/'>
-          <img src={logo} alt="logo loja" className="Navbar-brand"/>
+          <img src={logo} alt="logo loja" className="Navbar-brand" />
         </Link>
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-5">
@@ -19,11 +20,23 @@ export default class Navbar extends Component {
           </li>
         </ul>
         <Link to='/cart' className="ml-auto">
-          <button>
-            <span><i className="fas fa-cart-plus"/>My Cart</span>
-          </button>
+          <ButtonC>
+            <span className="mr-2"><i className="fas fa-cart-plus" /></span>My Cart
+          </ButtonC>
         </Link>
       </nav>
     )
   }
 }
+
+const ButtonC = styled.button`
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: orange;
+  border: 2px solid white;
+  font-size:1.4rem;
+`
