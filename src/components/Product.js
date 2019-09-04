@@ -6,7 +6,7 @@ export default class Product extends Component {
   render() {
     return (
       <div>
-        <h3>produto</h3>
+        <h3>Home Produto</h3>
       </div>
     )
   }
