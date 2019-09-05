@@ -37,10 +37,15 @@ export default class Product extends Component {
   }
 }
 
+// aqui crio uma regra para cada tipo de variavel, evitando que um inteiro seja retornado no lugar de um bool,dessa forma torno seguro 
 Product.propTypes = {
-  Product:PropTypes.shape({
-    id:PropTypes.number,
-  })
+  Product: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
 }
 
 
