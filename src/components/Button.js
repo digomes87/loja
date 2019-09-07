@@ -10,4 +10,5 @@ export const ButtonC = styled.button`
   color: orange;
   border: 2px solid white;
   font-size:1.4rem;
+  background-color: var(--mainBlue);
 `
