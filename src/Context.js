@@ -9,7 +9,7 @@ class ProductProvider extends Component {
     detailProduct: detailProduct
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.storeProducts();
   }
 
@@ -23,13 +23,20 @@ class ProductProvider extends Component {
       return { products: tempProducts }
     })
   }
+  getItem = (id) => {
+    const product = this.state.products.find(item => item.id === id);
+    return product;
+  };
 
-  handlerDetails = () => {
-    console.log('detalhe do produto');
+  handlerDetails = (id) => {
+    const product = this.getItem();
+    this.setState(() => {
+      return { detailProduct: product }
+    })
   }
 
-  addToCart = () => {
-    console.log('adicionando ao carrinho');
+  addToCart = (id) => {
+    console.log(`adicionando ao carrinho compra ${id}`);
   }
 
   render() {

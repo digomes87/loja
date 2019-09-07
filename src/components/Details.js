@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ButtonC } from "./Button"; 
 import { id } from 'postcss-selector-parser';
 
-
+// postcss-selector-parser
 export default class Details extends Component {
   render() {
     return (
@@ -36,6 +36,12 @@ export default class Details extends Component {
                     <div>
                       <Link to="/">
                         <ButtonC>Voltar</ButtonC>
+
+                        <ButtonC disabled={inCart ? true:false} onClick={()=>{
+                          value.addToCart(id)
+                        }}>
+                          {inCart ? "Já selecionado" : "Comprar"}
+                        </ButtonC>
                       </Link>
                     </div>
                   </div>
